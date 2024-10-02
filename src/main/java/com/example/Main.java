@@ -6,12 +6,16 @@ public class Main {
         UsuarioController controller = new UsuarioController();
 
         // Cria um novo usuário
-        Usuario novoUsuario = new Usuario("","Sophia", 23, "Rua das Rosas");
+        Usuario novoUsuario = new Usuario("12", "Sophia", 23, "Rua das Rosas");
+        controller.create(novoUsuario); // Adiciona o novo usuário
 
-        // Chama o método create para adicionar o novo usuário
-        controller.create(novoUsuario);
+        // Cria outro usuário para atualizar
+        Usuario atualizarUsuario = new Usuario("8f81", "Mario", 23, "Rua das Rosas");
+        controller.deleteUser(atualizarUsuario); // Atualiza o usuário
 
-        // Se você quiser ler a lista de usuários depois de criar
-         controller.read(); // Descomente esta linha se quiser ler a lista após a criação
+        // Lê a lista de usuários após as operações
+        controller.read(); // Mostra a lista de usuários
     }
+
+    
 }
